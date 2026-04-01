@@ -58,7 +58,9 @@ def check_file(filepath: str) -> list[str]:
         if (
             "github.com/mesa/mesa" in url or "github.com/projectmesa/mesa" in url
         ) and "/master" in url:
-            errors.append(f"Reference to 'master' branch: {url} (Should be '{MAIN_BRANCH}')")
+            errors.append(
+                f"Reference to 'master' branch: {url} (Should be '{MAIN_BRANCH}')"
+            )
 
         # 4. Check for internal relative links (simple check)
         if not url.startswith(("http://", "https://", "mailto:", "#", "ftp://")):
